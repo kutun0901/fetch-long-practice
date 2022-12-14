@@ -17,7 +17,19 @@ fetch('/products', {
 /* ============================== Phase 2 ============================== */
 
 // Your code here
-
+fetch('/products', {
+    method: 'POST',
+    headers: {'Content-Type': "application/x-www-form-urlencoded"},
+    body: "name=Caribbean+Delight+Coffee&description=Made+by+Manatee+Coffee&price=11%2E99&categories=grocery"
+})
+.then (res => {
+    console.log({
+        status: res.status,
+        headers: res.headers.get("Content-Type"),
+        url: res.url,
+        redirected: res.redirected
+    })
+})
 
 
 /* ============================== Phase 3 ============================== */
