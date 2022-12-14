@@ -35,3 +35,21 @@ fetch('/products', {
 /* ============================== Phase 3 ============================== */
 
 // Your code here
+fetch('/products', {
+    method: 'POST',
+    headers: {'Content-Type': "application/x-www-form-urlencoded"},
+    body: new URLSearchParams ({
+        name: "Caribbean Delight Coffee",
+        description: "Made by Manatee Coffee",
+        price: 11.99,
+        categories: "grocery"
+    })
+})
+.then (res => {
+    console.log({
+        status: res.status,
+        headers: res.headers.get("Content-Type"),
+        url: res.url,
+        redirected: res.redirected
+    })
+})
